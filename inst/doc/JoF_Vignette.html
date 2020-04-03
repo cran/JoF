@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Markus Burkhardt &amp; Magdalena Burkhardt" />
+
+<meta name="date" content="2020-04-02" />
+
+<title>JoF Vignette</title>
+
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">JoF Vignette</h1>
+<h4 class="author">Markus Burkhardt &amp; Magdalena Burkhardt</h4>
+<h4 class="date">2020-04-02</h4>
+
+
+
+<div id="citation" class="section level2">
+<h2>Citation</h2>
+<p>If you use JoF, please cite it in your work as:</p>
+<p>Burkhardt, M. (2019). JoF: Modelling and Simulating Judgments of Frequency. R package version 0.1.0. <a href="https://CRAN.R-project.org/package=JoF" class="uri">https://CRAN.R-project.org/package=JoF</a></p>
+</div>
+<div id="jof-package" class="section level2">
+<h2>JoF-package</h2>
+<p>In a typical experiment for intuitive judgments of frequencies (JoF), different stimuli with different frequencies are presented. To predict or simulate relative judgments of frequency one can use formal models. MINERVA 2 (Hintzman, 1988), TODAM 2 (Murdock, Smith &amp; Bai, 2001), and PASS 1, PASS 2 (both Sedlmeier, 2002) are implemented in the JoF-package.</p>
+<p>To simulate an estimation we create four items and a sequence. The items are presented in an abstract way. The value 0 means the absence and the value 1 the presence of a feature. The sequence <code>seq</code> contains the absuolute frequency (e.g. <code>item1</code> and <code>item4</code> are presented once, <code>item2</code> is presented twice and <code>item3</code> is presented three times)</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># create 4 items</span></a>
+<a class="sourceLine" id="cb1-2" title="2">item1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>) </a>
+<a class="sourceLine" id="cb1-3" title="3">item2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb1-4" title="4">item3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb1-5" title="5">item4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co"># create a sequence</span></a>
+<a class="sourceLine" id="cb1-7" title="7">sqc1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>)</a></code></pre></div>
+<p>We also have to specify parameters for attention and decay. These parameters have different implementations and terms (because of the mathematical formulas behind). In this short introduction we show values, which are proven in our simulations (but feel free to try out some new definitions). We give a simple example for PASS 1 and graphing the results over the 7 single presentations.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Simulation with PASS 1 </span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">library</span>(JoF)</a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">set.seed</span>(<span class="dv">123</span>)</a>
+<a class="sourceLine" id="cb2-4" title="4">fit_pass1 &lt;-<span class="st"> </span><span class="kw">PASS1</span>(item1, item2, item3, item4, </a>
+<a class="sourceLine" id="cb2-5" title="5">                   <span class="dt">sqc =</span> sqc1, <span class="dt">att =</span> <span class="fl">.1</span>, <span class="dt">ifc =</span> <span class="fl">-.025</span>, <span class="dt">dec =</span> <span class="fl">-.05</span>,</a>
+<a class="sourceLine" id="cb2-6" title="6">                   <span class="dt">rdm_weights =</span> <span class="ot">FALSE</span>, <span class="dt">noise =</span> <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb2-7" title="7">fit_pass1</a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt; relative judgment of frequency</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; item1: 0.125</span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt; item2: 0.279</span></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="co">#&gt; item3: 0.449</span></a>
+<a class="sourceLine" id="cb2-13" title="13"><span class="co">#&gt; item4: 0.146</span></a>
+<a class="sourceLine" id="cb2-14" title="14"><span class="kw">plot</span>(fit_pass1)</a></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --> <br>The plot give us an impression of the progress of the judgments. If we would brake up the presentation after five Stimuli item 2 would have the highest judgment of frequency.</p>
+<p>Now let’s compare the four models for JoF</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># Simulation with PASS 2 </span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">set.seed</span>(<span class="dv">123</span>)</a>
+<a class="sourceLine" id="cb3-3" title="3">fit_pass2 &lt;-<span class="st"> </span><span class="kw">PASS2</span>(item1, item2, item3, item4, </a>
+<a class="sourceLine" id="cb3-4" title="4">      <span class="dt">sqc=</span>sqc1, <span class="dt">att =</span> <span class="fl">.1</span>, <span class="dt">n_output_units =</span> <span class="st">&quot;half&quot;</span>,</a>
+<a class="sourceLine" id="cb3-5" title="5">      <span class="dt">rdm_weights =</span> <span class="ot">FALSE</span>, <span class="dt">noise =</span> <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co"># Simulation with MINERVA 2</span></a>
+<a class="sourceLine" id="cb3-7" title="7">fit_minerva2 &lt;-<span class="st"> </span><span class="kw">MINERVA2</span>( item1, item2, item3, item4, </a>
+<a class="sourceLine" id="cb3-8" title="8">          <span class="dt">sqc =</span> sqc1, <span class="dt">L =</span> <span class="dv">1</span>, <span class="dt">dec=</span><span class="ot">NULL</span>)</a>
+<a class="sourceLine" id="cb3-9" title="9">fit_todam2 &lt;-<span class="st"> </span><span class="kw">TODAM2</span>(item1, item2, item3, item4, </a>
+<a class="sourceLine" id="cb3-10" title="10">       <span class="dt">sqc =</span> sqc1, <span class="dt">gamma =</span> <span class="dv">1</span>, <span class="dt">alpha =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb3-11" title="11"></a>
+<a class="sourceLine" id="cb3-12" title="12"><span class="kw">matrix</span>(</a>
+<a class="sourceLine" id="cb3-13" title="13">  <span class="kw">round</span>(<span class="kw">c</span>(fit_pass1<span class="op">$</span>percent_estimate,fit_pass2<span class="op">$</span>percent_estimate,</a>
+<a class="sourceLine" id="cb3-14" title="14">    fit_minerva2<span class="op">$</span>percent_estimate,fit_todam2<span class="op">$</span>percent_estimate),<span class="dv">3</span>),</a>
+<a class="sourceLine" id="cb3-15" title="15">  <span class="dt">byrow =</span> T, <span class="dt">ncol =</span> <span class="dv">4</span>, </a>
+<a class="sourceLine" id="cb3-16" title="16">  <span class="dt">dimnames =</span> <span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb3-17" title="17">    <span class="kw">c</span>(<span class="st">&quot;PASS 1&quot;</span>, <span class="st">&quot;PASS 2&quot;</span>, <span class="st">&quot;MINERVA 2&quot;</span>, <span class="st">&quot;TODAM 2&quot;</span>),</a>
+<a class="sourceLine" id="cb3-18" title="18">    <span class="kw">c</span>(<span class="st">&quot;item1&quot;</span>, <span class="st">&quot;item2&quot;</span>, <span class="st">&quot;item3&quot;</span>, <span class="st">&quot;item4&quot;</span>))</a>
+<a class="sourceLine" id="cb3-19" title="19">  )</a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt;           item1 item2 item3 item4</span></a>
+<a class="sourceLine" id="cb3-21" title="21"><span class="co">#&gt; PASS 1    0.125 0.279 0.449 0.146</span></a>
+<a class="sourceLine" id="cb3-22" title="22"><span class="co">#&gt; PASS 2    0.104 0.258 0.462 0.176</span></a>
+<a class="sourceLine" id="cb3-23" title="23"><span class="co">#&gt; MINERVA 2 0.143 0.286 0.429 0.143</span></a>
+<a class="sourceLine" id="cb3-24" title="24"><span class="co">#&gt; TODAM 2   0.143 0.286 0.429 0.143</span></a></code></pre></div>
+<p>MINERVA 2 and TODAM 2 produce perfect estimations because in this example both models work without any error.</p>
+<p>Typically, a simulation doesn’t run once. So we can create some more <em>real world</em> conditions (for example random sequence, imperfect learning and decay) and run the simulation 100 times.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># Simulation with 100 replications </span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">set.seed</span>(<span class="dv">123</span>)</a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="co"># PASS 1</span></a>
+<a class="sourceLine" id="cb4-4" title="4">p1 &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb4-5" title="5">               {</a>
+<a class="sourceLine" id="cb4-6" title="6">               random_sqc &lt;-<span class="st"> </span><span class="kw">sample</span>(sqc1, <span class="dv">7</span>, <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb4-7" title="7">               <span class="kw">PASS1</span>(item1, item2, item3, item4, </a>
+<a class="sourceLine" id="cb4-8" title="8">                     <span class="dt">sqc =</span> random_sqc, </a>
+<a class="sourceLine" id="cb4-9" title="9">                     <span class="dt">att =</span> <span class="fl">.1</span>, <span class="dt">ifc =</span> <span class="fl">-.025</span>, <span class="dt">dec =</span> <span class="fl">-.05</span>,</a>
+<a class="sourceLine" id="cb4-10" title="10">                     <span class="dt">rdm_weights =</span> <span class="ot">FALSE</span>, </a>
+<a class="sourceLine" id="cb4-11" title="11">                     <span class="dt">noise =</span> <span class="dv">0</span> </a>
+<a class="sourceLine" id="cb4-12" title="12">                    )<span class="op">$</span>percent_estimate</a>
+<a class="sourceLine" id="cb4-13" title="13">               }</a>
+<a class="sourceLine" id="cb4-14" title="14">)</a>
+<a class="sourceLine" id="cb4-15" title="15"><span class="co"># PASS 2</span></a>
+<a class="sourceLine" id="cb4-16" title="16">p2 &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb4-17" title="17">               {</a>
+<a class="sourceLine" id="cb4-18" title="18">               random_sqc &lt;-<span class="st"> </span><span class="kw">sample</span>(sqc1, <span class="dv">7</span>, <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb4-19" title="19">               <span class="kw">PASS2</span>(item1, item2, item3, item4, </a>
+<a class="sourceLine" id="cb4-20" title="20">                     <span class="dt">sqc =</span> random_sqc, </a>
+<a class="sourceLine" id="cb4-21" title="21">                     <span class="dt">att =</span> <span class="fl">.1</span>, </a>
+<a class="sourceLine" id="cb4-22" title="22">                     <span class="dt">n_output_units =</span> <span class="st">&quot;half&quot;</span>,</a>
+<a class="sourceLine" id="cb4-23" title="23">                     <span class="dt">rdm_weights =</span> F, <span class="dt">noise =</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb4-24" title="24">                     )<span class="op">$</span>percent_estimate</a>
+<a class="sourceLine" id="cb4-25" title="25">               }</a>
+<a class="sourceLine" id="cb4-26" title="26">)</a>
+<a class="sourceLine" id="cb4-27" title="27"><span class="co"># MINERVA 2</span></a>
+<a class="sourceLine" id="cb4-28" title="28">m2 &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb4-29" title="29">               {</a>
+<a class="sourceLine" id="cb4-30" title="30">                random_sqc &lt;-<span class="st"> </span><span class="kw">sample</span>(sqc1, <span class="dv">7</span>, <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb4-31" title="31">               <span class="kw">MINERVA2</span>(item1, item2, item3, item4,</a>
+<a class="sourceLine" id="cb4-32" title="32">                        <span class="dt">sqc =</span> random_sqc, </a>
+<a class="sourceLine" id="cb4-33" title="33">                        <span class="dt">L =</span> <span class="fl">.9</span>,</a>
+<a class="sourceLine" id="cb4-34" title="34">                        <span class="dt">dec =</span> <span class="st">&quot;curve&quot;</span></a>
+<a class="sourceLine" id="cb4-35" title="35">                        )<span class="op">$</span>percent_estimate</a>
+<a class="sourceLine" id="cb4-36" title="36">               }</a>
+<a class="sourceLine" id="cb4-37" title="37">)</a>
+<a class="sourceLine" id="cb4-38" title="38"><span class="co"># TODAM 2</span></a>
+<a class="sourceLine" id="cb4-39" title="39">t2 &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb4-40" title="40">               {</a>
+<a class="sourceLine" id="cb4-41" title="41">               random_sqc &lt;-<span class="st"> </span><span class="kw">sample</span>(sqc1, <span class="dv">7</span>, <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb4-42" title="42">               <span class="kw">TODAM2</span>(item1, item2, item3, item4,</a>
+<a class="sourceLine" id="cb4-43" title="43">                      <span class="dt">sqc =</span> random_sqc, </a>
+<a class="sourceLine" id="cb4-44" title="44">                      <span class="dt">gamma =</span> <span class="fl">.9</span>,</a>
+<a class="sourceLine" id="cb4-45" title="45">                      <span class="dt">alpha =</span> <span class="fl">.9</span></a>
+<a class="sourceLine" id="cb4-46" title="46">                      )<span class="op">$</span>percent_estimate</a>
+<a class="sourceLine" id="cb4-47" title="47">               }</a>
+<a class="sourceLine" id="cb4-48" title="48">)</a>
+<a class="sourceLine" id="cb4-49" title="49"><span class="kw">matrix</span>(<span class="kw">round</span>(</a>
+<a class="sourceLine" id="cb4-50" title="50">  <span class="kw">c</span>(<span class="kw">rowMeans</span>(p1), <span class="kw">rowMeans</span>(p2), <span class="kw">rowMeans</span>(m2), <span class="kw">rowMeans</span>(t2)), <span class="dv">3</span>), </a>
+<a class="sourceLine" id="cb4-51" title="51">  <span class="dt">ncol =</span> <span class="dv">4</span>, <span class="dt">byrow =</span> T, </a>
+<a class="sourceLine" id="cb4-52" title="52">  <span class="dt">dimnames =</span> <span class="kw">list</span>(<span class="kw">c</span>(<span class="st">&quot;PASS 1&quot;</span>, <span class="st">&quot;PASS 2&quot;</span>, <span class="st">&quot;MINERVA 2&quot;</span>, <span class="st">&quot;TODAM 2&quot;</span>),</a>
+<a class="sourceLine" id="cb4-53" title="53">                  <span class="kw">c</span>(<span class="st">&quot;Item 1&quot;</span>, <span class="st">&quot;Item 2&quot;</span>, <span class="st">&quot;Item 3&quot;</span>, <span class="st">&quot;Item 4&quot;</span>))</a>
+<a class="sourceLine" id="cb4-54" title="54">)</a>
+<a class="sourceLine" id="cb4-55" title="55"><span class="co">#&gt;           Item 1 Item 2 Item 3 Item 4</span></a>
+<a class="sourceLine" id="cb4-56" title="56"><span class="co">#&gt; PASS 1     0.146  0.285  0.424  0.146</span></a>
+<a class="sourceLine" id="cb4-57" title="57"><span class="co">#&gt; PASS 2     0.146  0.288  0.418  0.148</span></a>
+<a class="sourceLine" id="cb4-58" title="58"><span class="co">#&gt; MINERVA 2  0.167  0.280  0.436  0.117</span></a>
+<a class="sourceLine" id="cb4-59" title="59"><span class="co">#&gt; TODAM 2    0.142  0.276  0.441  0.141</span></a>
+<a class="sourceLine" id="cb4-60" title="60"><span class="co"># theoretical frequancy</span></a>
+<a class="sourceLine" id="cb4-61" title="61"><span class="kw">table</span>(sqc1)<span class="op">/</span><span class="dv">7</span></a>
+<a class="sourceLine" id="cb4-62" title="62"><span class="co">#&gt; sqc1</span></a>
+<a class="sourceLine" id="cb4-63" title="63"><span class="co">#&gt;         1         2         3         4 </span></a>
+<a class="sourceLine" id="cb4-64" title="64"><span class="co">#&gt; 0.1428571 0.2857143 0.4285714 0.1428571</span></a></code></pre></div>
+<p>We see slightly differences in judgments of frequency for the models, but all in all, these judgements are quite exact. Remember the correct answer would be 14%; 29%, 43% , 14%. But what we have done in this short demonstration, were extremely simple simulations. We can add variance through another item respresentation. Especially TODAM 2 algorithms have another kind of item representation in the original literature. Also lowering the attention or learning parameters increase variance in estimation. Furthermore, random noise could be added. For simulating empirical results one may think about the conditions of person, environment and the stimulus material and adapt these to the formal model simulations.</p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
